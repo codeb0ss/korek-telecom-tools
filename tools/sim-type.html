@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SULI_CYB3R_CORPS</title>
+  </head>
+  <body>
+    <h1>ژمارەی تەلەفۆنی کۆڕەک تیلیکۆم ئۆتۆماتیکی جۆری سیمم وەربگرە</h1>
+    <p>ژمارەی مۆبایلت داخل بکە:</p>
+    <input type="text" id="phone-number">
+    <button onclick="getSimType()">جۆری سیمکارت بەدەست بهێنە</button>
+    <p id="sim-type"></p>
+    <script>
+      function getSimType() {
+        const phoneNumber = document.getElementById("phone-number").value;
+        let simType = "";
+        if (phoneNumber.startsWith("0750") || phoneNumber.startsWith("0751")) {
+          simType = "4G";
+        } else if (phoneNumber.startsWith("0752") || phoneNumber.startsWith("0753")) {
+          simType = "3G";
+        } else if (phoneNumber.startsWith("0754") || phoneNumber.startsWith("0755")) {
+          simType = "2G";
+        } else {
+          simType = "نەزانراو";
+        }
+        document.getElementById("sim-type").innerHTML = ` ${simType} جۆری سیمەکەت بریتییە لە`;
+      }
+    </script>
+  </body>
+</html>
